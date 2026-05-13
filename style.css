@@ -146,6 +146,7 @@ section.slide { padding-left: 40px; padding-right: 40px; }
 .cover-disclaimer {
   font-style: italic; color: #6a5a40; font-size: 13px;
   max-width: 520px; margin-bottom: 32px; line-height: 1.85;
+  word-break: keep-all; overflow-wrap: break-word;
 }
 .cover-author { color: #8a7a60; font-size: 12px; letter-spacing: 0.05em; }
 
