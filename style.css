@@ -98,13 +98,14 @@ section.slide { padding-left: 40px; padding-right: 40px; }
 .slide-cover {
   background: #0d0d0d;
   position: relative; overflow: hidden;
-  align-items: flex-start; justify-content: center;
+  align-items: flex-start; justify-content: flex-start;
 }
 .gold-bar {
   position: absolute; left: 0; top: 0; bottom: 0;
   width: 8px; background: var(--gold);
+  z-index: 1;
 }
-.cover-content { padding-left: 40px; }
+.cover-content { padding-left: 48px; position: relative; z-index: 1; max-width: 780px; }
 .label-text {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.3em; font-size: 12px;
@@ -112,9 +113,10 @@ section.slide { padding-left: 40px; padding-right: 40px; }
 }
 .cover-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(2rem, 4.5vw, 4rem);
   font-weight: 800; color: var(--cream);
-  line-height: 1.1; margin-bottom: 16px;
+  line-height: 1.15; margin-bottom: 16px;
+  word-break: keep-all;
 }
 .cover-subtitle {
   font-size: clamp(1.4rem, 3vw, 2.2rem);
@@ -457,6 +459,29 @@ section.slide { padding-left: 40px; padding-right: 40px; }
 .kpi-branch li:last-child { border-bottom: none; }
 .sentiment li { border-color: rgba(192,64,64,0.1); }
 .slide-light .kpi-branch li { color: #2a2520; }
+
+/* ===== DARK SUB-COMPONENTS INSIDE LIGHT SECTIONS ===== */
+/* .slide-light p/li 규칙이 dark 카드 내부 텍스트까지 어둡게 만드는 문제 수정 */
+.slide-light .card-dark,
+.slide-light .card-dark p,
+.slide-light .card-dark li { color: var(--text); }
+.slide-light .card-dark .card-label { color: #8a7040; }
+.slide-light .card-dark .card-label.gold { color: var(--gold); }
+.slide-light .card-dark .num-gold { color: var(--gold); }
+.slide-light .card-dark .italic-text { color: #888; }
+.slide-light .card-dark .gold { color: var(--gold); }
+
+.slide-light .quote-box p { color: var(--text); }
+.slide-light .quote-box .quote-mark { color: var(--gold); }
+.slide-light .quote-box .quote-text { color: var(--cream); font-style: italic; }
+.slide-light .quote-box .quote-source { color: var(--gold); }
+.slide-light .quote-box .italic-text { color: #888; }
+
+.slide-light .bm-exclude p,
+.slide-light .bm-exclude li { color: var(--text); }
+.slide-light .bm-exclude .exclude-title { color: var(--gold); }
+.slide-light .bm-exclude .exclude-list li { color: #c04040; }
+.slide-light .bm-exclude .cbt-verify { color: #888; }
 
 /* ===== UTILITY ===== */
 .gold { color: var(--gold); }
