@@ -98,45 +98,56 @@ section.slide { padding-left: 40px; padding-right: 40px; }
 
 /* ===== COVER ===== */
 .slide-cover {
-  background: #0a0a0a;
+  background: linear-gradient(135deg, #faf7f0 0%, #f0ebe0 60%, #e8e0cc 100%);
   position: relative;
-  align-items: flex-start; justify-content: flex-start;
-  /* 세로 중앙 정렬 */
+  align-items: flex-start;
   justify-content: center;
 }
+/* 우측 골드 장식 라인 */
+.slide-cover::after {
+  content: '';
+  position: absolute;
+  right: 120px; top: 50%;
+  transform: translateY(-50%);
+  width: 1px; height: 55%;
+  background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.5), transparent);
+  pointer-events: none;
+}
 .cover-content {
-  border-left: 6px solid var(--gold);
+  border-left: 5px solid var(--gold);
   padding-left: 40px;
-  max-width: 760px;
+  max-width: 680px;
+  position: relative;
+  z-index: 1;
 }
 .label-text {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.3em; font-size: 11px;
-  color: var(--gold); margin-bottom: 20px;
-  opacity: 0.9;
+  color: #8a6820; margin-bottom: 20px;
 }
 .cover-title {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(2.4rem, 5vw, 4.2rem);
-  font-weight: 800; color: #ffffff;
+  font-weight: 800; color: #1a1208;
   line-height: 1.1; margin-bottom: 16px;
   letter-spacing: -0.01em;
 }
 .cover-subtitle {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  color: var(--gold); font-weight: 400; margin-bottom: 28px;
-  opacity: 0.9;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: #8a6820; font-weight: 500; margin-bottom: 28px;
+  letter-spacing: 0.02em;
 }
 .cover-divider {
-  width: 160px; height: 1px; background: var(--gold); margin-bottom: 28px;
-  opacity: 0.6;
+  width: 160px; height: 2px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin-bottom: 28px;
 }
-.cover-role { color: #e0d8c8; font-size: 15px; margin-bottom: 16px; }
+.cover-role { color: #2a2010; font-size: 15px; margin-bottom: 14px; }
 .cover-disclaimer {
-  font-style: italic; color: #999; font-size: 13px;
-  max-width: 540px; margin-bottom: 32px; line-height: 1.8;
+  font-style: italic; color: #6a5a40; font-size: 13px;
+  max-width: 520px; margin-bottom: 32px; line-height: 1.85;
 }
-.cover-author { color: #777; font-size: 12px; letter-spacing: 0.05em; }
+.cover-author { color: #8a7a60; font-size: 12px; letter-spacing: 0.05em; }
 
 /* ===== SLIDE HEADER ===== */
 .slide-header { margin-bottom: 40px; }
